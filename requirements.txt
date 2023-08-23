@@ -1,0 +1,4 @@
+python>=3.9
+selenium>=4.11.2
+pytest>=7.4.0
+unittest>=1.1.0
