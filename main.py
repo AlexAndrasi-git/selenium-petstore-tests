@@ -1,5 +1,6 @@
 import unittest2
 from tests.test_login_to_petstore import TestLoginToPetstore
+from tests.test_verify_find_pet_functions import TestVerifyFindPetFunctions
 import HtmlTestRunner
 
 
@@ -7,6 +8,7 @@ def create_test_suite():
     loader = unittest2.TestLoader()
     suite = unittest2.TestSuite()
     suite.addTests(loader.loadTestsFromTestCase(TestLoginToPetstore))
+    suite.addTests(loader.loadTestsFromTestCase(TestVerifyFindPetFunctions))
     return suite
 
 
