@@ -1,4 +1,5 @@
 import unittest2
+import os
 from tests.test_login_to_petstore import TestLoginToPetstore
 from tests.test_verify_find_pet_functions import TestVerifyFindPetFunctions
 import HtmlTestRunner
@@ -17,7 +18,10 @@ if __name__ == "__main__":
     runner = unittest2.TextTestRunner()
 
     # Specify the path to save the HTML report
-    report_path = "C:/Users/locke/PycharmProjects/selenium-petstore/testreport"
+    if os.environ.get('GITHUB_ACTIONS') == 'true':
+        report_path = "/home/runner/work/selenium-petstore/selenium-petstore/testreport"
+    else:
+        report_path = "C:/Users/locke/PycharmProjects/selenium-petstore/testreport"
 
     # Create a test runner with HtmlTestRunner
     runner = HtmlTestRunner.HTMLTestRunner(
