@@ -10,7 +10,12 @@ from selenium.webdriver.common.keys import Keys
 class TestVerifyFindPetFunctions(unittest2.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()  # Initialize Chrome driver instance
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        options.add_argument('--disable-infobars')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--no-sandbox')
+        self.driver = webdriver.Chrome(options=options)
         self.generalUtilities = GeneralUtilities(self.driver)
         self.driver.implicitly_wait(3)
 
