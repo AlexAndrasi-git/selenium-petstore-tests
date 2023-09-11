@@ -37,7 +37,7 @@ jobs:
           python main.py
 
       - name: Archive HTML report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: reports/test_report.html
+          path: /home/runner/work/selenium-petstore/selenium-petstore/testreport
