@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
 
+  workflow_dispatch:
+    inputs:
+      PETSTORE_TEST_SUITE:
+        type: choice
+        description: 'Trigger the petstore selenium test workflow'
+
 jobs:
   run-tests:
     runs-on: ubuntu-latest
