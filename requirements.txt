@@ -1,3 +1,4 @@
 unittest2
 selenium
 python-dotenv
+html-testRunner
