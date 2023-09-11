@@ -1,8 +1,12 @@
 name: Selenium Tests
 
 on:
+  schedule:
+    - cron: "0 11 * * *"
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - feature/development
   pull_request:
     branches: [ main ]
   workflow_dispatch:
