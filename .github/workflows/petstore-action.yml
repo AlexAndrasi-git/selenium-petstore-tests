@@ -2,20 +2,17 @@ name: Selenium Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-
+    branches: [main]
   workflow_dispatch:
     inputs:
       PETSTORE_TEST_SUITE:
-        type: choice
         description: 'Trigger the petstore selenium test workflow'
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -39,4 +36,4 @@ jobs:
 
       - name: Run tests
         run: |
-            python main.py
+          python main.py
