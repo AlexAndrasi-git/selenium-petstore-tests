@@ -30,17 +30,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
-        run: |
-          if [ -z "$GITHUB_ACTIONS" ]; then
-            # Run tests using environment variables from local .env file
-            python main.py
-          else
-            # Run tests using GitHub Secrets as environment variables
-            python main.py
-
+      - name: Set up environment variables
         env:
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           DEMO_USERNAME: ${{ secrets.DEMO_USERNAME }}
           DEMO_PASSWORD: ${{ secrets.DEMO_PASSWORD }}
+
+      - name: Run tests
+        run: |
+            python main.py
