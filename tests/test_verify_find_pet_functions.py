@@ -15,7 +15,7 @@ class TestVerifyFindPetFunctions(unittest2.TestCase):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument('headless')
-        options.addArguments("start-maximized");
+        options.add_argument("start-maximized");
         options.add_argument('--disable-infobars')
         options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(options=options)
