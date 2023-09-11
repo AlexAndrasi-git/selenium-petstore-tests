@@ -1,4 +1,6 @@
 import os
+import time
+
 import unittest2
 from utilities.generalUtilities import GeneralUtilities
 from pages.petsPage import PetsPageLocators
@@ -11,10 +13,11 @@ class TestVerifyFindPetFunctions(unittest2.TestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
         options.add_argument('headless')
+        options.addArguments("start-maximized");
         options.add_argument('--disable-infobars')
         options.add_argument('--disable-dev-shm-usage')
-        options.add_argument('--no-sandbox')
         self.driver = webdriver.Chrome(options=options)
         self.generalUtilities = GeneralUtilities(self.driver)
         self.driver.implicitly_wait(3)
@@ -43,6 +46,7 @@ class TestVerifyFindPetFunctions(unittest2.TestCase):
         # Select 50 items instead of 5 in the Table View
         petsItemsPerPageMatSelect = self.driver.find_element(*PetsPageLocators.petsItemsPerPageMatSelect)
         self.driver.execute_script("arguments[0].scrollIntoView();", petsItemsPerPageMatSelect)
+        time.sleep(2)
         petsItemsPerPageMatSelect.click()
         pets50ItemPerPageMatOption = self.driver.find_element(*PetsPageLocators.pets50ItemPerPageMatOption)
         pets50ItemPerPageMatOption.click()
