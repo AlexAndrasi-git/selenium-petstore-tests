@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class TestLoginToPetstore(unittest2.TestCase):
 
-    def setUp(self):
+    def set_up(self):
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
         options.add_argument('--disable-infobars')
@@ -19,7 +19,7 @@ class TestLoginToPetstore(unittest2.TestCase):
         self.generalUtilities = GeneralUtilities(self.driver)
         self.driver.implicitly_wait(3)
 
-    def tearDown(self):
+    def tear_down(self):
         self.generalUtilities.driver.quit()
 
     if os.getenv('GITHUB_ACTIONS') is None:
