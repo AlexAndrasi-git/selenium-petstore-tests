@@ -9,9 +9,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class TestVerifyPetFunctions(unittest2.TestCase):
+class TestVerifyPetViewFunctions(unittest2.TestCase):
 
-    def set_up(self):
+    def setUp(self):
         if os.environ.get('GITHUB_ACTIONS') == 'true':
             options = webdriver.ChromeOptions()
             options.add_argument('--no-sandbox')
@@ -27,7 +27,7 @@ class TestVerifyPetFunctions(unittest2.TestCase):
             self.generalUtilities = GeneralUtilities(self.driver)
             self.driver.implicitly_wait(3)
 
-    def tear_down(self):
+    def tearDown(self):
         self.generalUtilities.driver.quit()
 
     def test_search_by_sold_status(self):
