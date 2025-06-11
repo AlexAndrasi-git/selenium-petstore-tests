@@ -1,4 +1,3 @@
-unittest
 selenium
 python-dotenv
 html-testRunner
