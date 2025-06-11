@@ -1,7 +1,7 @@
 import os
 import time
 
-import unittest2
+import unittest
 from utilities.generalUtilities import GeneralUtilities
 from pages.petsPage import PetsPageLocators
 from pages.generalPage import PetsPageHomeLocators
@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class TestVerifyFindPetFunctions(unittest2.TestCase):
+class TestVerifyFindPetFunctions(unittest.TestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()

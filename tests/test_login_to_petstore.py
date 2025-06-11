@@ -1,13 +1,13 @@
 import os
 
-import unittest2
+import unittest
 from dotenv import load_dotenv
 from selenium import webdriver
 from utilities.generalUtilities import GeneralUtilities
 from selenium.webdriver.common.by import By
 
 
-class TestLoginToPetstore(unittest2.TestCase):
+class TestLoginToPetstore(unittest.TestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()
